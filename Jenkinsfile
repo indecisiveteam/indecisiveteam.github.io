@@ -21,7 +21,9 @@ pipeline{
 		stage('Checkout'){
 			steps{
 				//sh "echo 123" 
-				server.upload(uploadSpec)
+				script{
+					server.upload(uploadSpec)
+				}			
 			}
 		}
 	}
