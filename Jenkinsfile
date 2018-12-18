@@ -1,3 +1,14 @@
+def server = Artifactory.server 'Artifactory new version'
+def uploadSpec = """{
+  "files": [
+    {
+      "pattern": "/home/ubuntu/lol.txt",
+      "target": "jenkins-new/1"
+    }
+ ]
+}"""
+server.upload(uploadSpec)
+
 pipeline{
 	environment{
 		BUILD_SCRIPTS_GIT="https://github.com/indecisiveteam/indecisiveteam.github.io.git"
@@ -15,5 +26,5 @@ pipeline{
 				sh ("chmod -R +x ${WORKSPACE}/repo/${BUILD_SCRIPTS} || true")
 			}
 		}
-	}	
+	}
 }
