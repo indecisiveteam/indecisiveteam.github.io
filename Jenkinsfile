@@ -3,7 +3,7 @@ def uploadSpec = """{
   "files": [
     {
       "pattern": "/home/ubuntu/lol.txt",
-      "target": "jenkins-new/1/"
+      "target": "jenkins-new/2/"
     }
  ]
 }"""
