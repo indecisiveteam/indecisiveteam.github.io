@@ -1,4 +1,4 @@
-def server = Artifactory.server 'Artifactory new version'
+def server = Artifactory.server 'Artifactory Version 6.5.13'
 def uploadSpec = """{
   "files": [
     {
