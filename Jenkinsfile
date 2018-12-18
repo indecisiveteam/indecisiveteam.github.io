@@ -1,14 +1,3 @@
-def server = Artifactory.server 'Artifactory Version 6.5.13'
-def uploadSpec = """{
-  "files": [
-    {
-      "pattern": "/home/ubuntu/lol.txt",
-      "target": "jenkins-new/2/"
-    }
- ]
-}"""
-//server.upload(uploadSpec)
-
 pipeline{
 	environment{
 		BUILD_SCRIPTS_GIT="https://github.com/indecisiveteam/indecisiveteam.github.io.git"
@@ -22,6 +11,21 @@ pipeline{
 			steps{
 				//sh "echo 123" 
 				script{
+					def server = Artifactory.server 'Artifactory Version 6.5.13'
+					def uploadSpec = """{
+					  "files": [
+					    {
+					      "pattern": "/home/ubuntu/lol.txt",
+					      "target": "jenkins-new/3/"
+					    }
+					]
+					}"""
+
+					def buildInfo = Artifactory.newBuildInfo()
+					buildInfo.name = 'super-frog'
+					buildInfo.number = 'v1.2.3'
+					server.publishBuildInfo buildInfo
+
 					server.upload(uploadSpec)
 				}			
 			}
