@@ -7,7 +7,7 @@ def uploadSpec = """{
     }
  ]
 }"""
-server.upload(uploadSpec)
+//server.upload(uploadSpec)
 
 pipeline{
 	environment{
@@ -21,9 +21,7 @@ pipeline{
 		stage('Checkout'){
 			steps{
 				//sh "echo 123" 
-				sh ("mkdir -p ${WORKSPACE}/repo;\
-				git clone https://github.com/indecisiveteam/indecisiveteam.github.io.git BUILD_SCRIPTS || true")
-				sh ("chmod -R +x ${WORKSPACE}/repo/${BUILD_SCRIPTS} || true")
+				server.upload(uploadSpec)
 			}
 		}
 	}
