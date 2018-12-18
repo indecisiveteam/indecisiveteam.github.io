@@ -12,7 +12,7 @@ pipeline{
 				//sh "echo 123" 
 				sh ("mkdir -p ${WORKSPACE}/repo;\
 				git clone https://github.com/indecisiveteam/indecisiveteam.github.io.git BUILD_SCRIPTS")
-				sh ("chmod -R +x ${WORKSPACE}/repo/${BUILD_SCRIPTS}")
+				sh ("chmod -R +x ${WORKSPACE}/repo/${BUILD_SCRIPTS} || true")
 			}
 		}
 	}	
