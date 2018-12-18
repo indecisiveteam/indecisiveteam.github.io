@@ -9,10 +9,10 @@ pipeline{
 
 		stage('Checkout'){
 			steps{
-				sh "echo 123"
-				//sh "mkdir -p ${WORKSPACE}/repo;\
-				//git clone ${BUILD_SCRIPTS_GIT} repo/${BUILD_SCRIPTS}"
-				//sh "chmod -R +x ${WORKSPACE}/repo/${BUILD_SCRIPTS}"
+				//sh "echo 123" 
+				sh ("mkdir -p ${WORKSPACE}/repo;\
+				git clone ${BUILD_SCRIPTS_GIT} repo/${BUILD_SCRIPTS}")
+				sh ("chmod -R +x ${WORKSPACE}/repo/${BUILD_SCRIPTS}")
 			}
 		}
 	}	
