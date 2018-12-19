@@ -16,14 +16,22 @@ pipeline{
 					  "files": [
 					    {
 					      "pattern": "/home/ubuntu/lol.txt",
-					      "target": "jenkins-new/3/"
+					      "target": "jenkins-new/lol/"
+					    }
+					    {
+					      "pattern": "/home/ubuntu/lol1.txt",
+					      "target": "jenkins-new/lol/"
+					    }
+					    {
+					      "pattern": "/home/ubuntu/lol2.txt",
+					      "target": "jenkins-new/lol/"
 					    }
 					]
 					}"""
 
 					def buildInfo = Artifactory.newBuildInfo()
-					buildInfo.name = 'super-frog'
-					buildInfo.number = 'v1.2.3'
+					buildInfo.name = 'lol-frog'
+					buildInfo.number = 'v.0.0.1'
 					server.publishBuildInfo buildInfo
 
 					server.upload(uploadSpec)
