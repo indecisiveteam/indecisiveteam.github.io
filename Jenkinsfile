@@ -17,11 +17,11 @@ pipeline{
 					    {
 					      "pattern": "/home/ubuntu/lol.txt",
 					      "target": "jenkins-new/lol/"
-					    }
+					    },
 					    {
 					      "pattern": "/home/ubuntu/lol1.txt",
 					      "target": "jenkins-new/lol/"
-					    }
+					    },
 					    {
 					      "pattern": "/home/ubuntu/lol2.txt",
 					      "target": "jenkins-new/lol/"
