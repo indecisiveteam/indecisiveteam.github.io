@@ -11,7 +11,7 @@ pipeline{
 			steps{
 				//sh "echo 123" 
 				script{
-					def server = Artifactory.server 'Artifactory Version 6.5.13'
+					def server = Artifactory.server 'Artifactory Version 6.6.0'
 					def uploadSpec = """{
 					  "files": [
 					    {
