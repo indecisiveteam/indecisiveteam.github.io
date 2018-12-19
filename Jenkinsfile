@@ -15,23 +15,19 @@ pipeline{
 					def uploadSpec = """{
 					  "files": [
 					    {
-					      "pattern": "/home/ubuntu/lol.txt",
-					      "target": "jenkins-new/lol/"
+					      "pattern": "/home/ubuntu/indecisiveteam.github.io/Rakefile",
+					      "target": "jenkins-new/git/"
 					    },
 					    {
-					      "pattern": "/home/ubuntu/lol1.txt",
-					      "target": "jenkins-new/lol/"
-					    },
-					    {
-					      "pattern": "/home/ubuntu/lol2.txt",
-					      "target": "jenkins-new/lol/"
+					      "pattern": "/home/ubuntu/indecisiveteam.github.io/package.json",
+					      "target": "jenkins-new/git/"
 					    }
 					]
 					}"""
 
 					def buildInfo = Artifactory.newBuildInfo()
-					buildInfo.name = 'lol-frog'
-					buildInfo.number = 'v.0.0.1'
+					buildInfo.name = 'git-frog'
+					buildInfo.number = 'v.0.0.2'
 					server.publishBuildInfo buildInfo
 
 					server.upload(uploadSpec)
